@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using MVCDemo.Filter;
 using MVCDemo.Models;
 
 namespace MVCDemo.Controllers
@@ -21,9 +22,29 @@ namespace MVCDemo.Controllers
 			return View();
 		}
 
+		public string CSRetest()
+		{
+			return "csharp test is today @5pm; get prepared";
+		}
+		[ResponseCache(Duration =10)]
+		[Mylog]
+
+		public string Retest()
+		{
+			return DateTime.Now.ToString();
+		}
+		[Mylog]
+		public string retests()
+		
+		{
+			return  "c#=12-sep";
+
+		}
+
 		public IActionResult Index()
 		{
 			return View();
+
 		}
 
 		public IActionResult Privacy()
